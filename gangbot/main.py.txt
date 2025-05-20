@@ -1,3 +1,6 @@
+from keep_alive import keep_alive
+keep_alive()
+
 import json
 import os
 import urllib.request
@@ -5,11 +8,11 @@ import urllib.parse
 import time
 
 # --- Ρυθμίσεις (Αλλάζεις μόνο εδώ) ---
-BOT_TOKEN = ""
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
-ETHERSCAN_API_KEY = ""
-ETH_WALLET = ""  # Το πορτοφόλι σου
+ETHERSCAN_API_KEY = os.environ["ETHERSCAN_API_KEY"]
+ETH_WALLET = os.environ["ETH_WALLET"]  # Το πορτοφόλι σου
 REQUIRED_PAYMENT_AMOUNT = 0.0007  # ETH που πρέπει να πληρωθούν
 
 ORDERS_FILE = "user_orders.json"
